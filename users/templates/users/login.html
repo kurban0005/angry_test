@@ -23,6 +23,11 @@
         <a class="btn btn-outline-dark" href="{% url 'users:register' %}">Создать новый аккаунт</a>
         <br/>
         <br/>
+        <div>
+        <form action="http://t.me/{{BOT_NAME}}" method="post">
+          <button type="submit" name="your_name" value="your_value" class="btn-link">Войти через Telegram</button>
+        </form>
+      </div>
     </div>
 </div>
 {% endblock content %}

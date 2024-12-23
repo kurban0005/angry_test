@@ -1,7 +1,15 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import logout, login, authenticate
 from django.contrib.auth.forms import UserCreationForm
+from dotenv import load_dotenv
+# from django.contrib.auth.models import User
+from django.conf import settings
+import telebot
+import os
 
+load_dotenv()
+
+bot = telebot.TeleBot(os.getenv('TELEGRAM_BOT_TOKEN'))
 
 
 def login_view(request):
@@ -16,7 +24,8 @@ def login_view(request):
             context = {'error': True}
             return render(request, 'users/login.html', context)
     else:
-        return render(request, 'users/login.html')
+        context = {'BOT_NAME': os.getenv("TELEGRAM_BOT_NAME")}
+        return render(request, 'users/login.html', context)
 
 
 def logout_view(request):
