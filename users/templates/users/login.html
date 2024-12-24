@@ -24,10 +24,10 @@
         <br/>
         <br/>
         <div>
-        <form action="http://t.me/{{BOT_NAME}}" method="post">
-          <button type="submit" name="your_name" value="your_value" class="btn-link">Войти через Telegram</button>
-        </form>
-      </div>
+            <form action="https://t.me/{{ TELEGRAM_BOT_NAME }}?start={{ token }}" target="_blank" method="post">
+                <button type="submit" name="telegram_login" class="btn btn-outline-dark">Войти через Telegram</button>
+            </form>
+        </div>
     </div>
 </div>
 {% endblock content %}

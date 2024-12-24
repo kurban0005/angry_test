@@ -28,7 +28,7 @@
                         МОЯ СТРАНИЦА</a></li>
             </ul>
             <ul class="navbar-nav ms-auto mb-2 mb-md-0">
-                {% if user.is_authenticated %}
+                {% if request.user.is_authenticated %}
                 <li class="nav-item">
                     <big><span class="navbar-text me-2">{{ user.username.title }}</span></big>
                 </li>
