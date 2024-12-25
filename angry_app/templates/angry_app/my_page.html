@@ -1,0 +1,12 @@
+{% extends 'angry_app/base.html' %}
+
+{% block content %}
+<div>
+    <h6>МОЯ СТРАНИЦА</h6>
+    <br/><br/><br/><br/>
+    <h5>ТЕПЕРЬ ВАМ ДОСТУПНА ДАННАЯ СТРАНИЦА</h5>
+    <br/>
+    <a class="btn btn-outline-dark btn-lg"
+       href="{% url 'angry_app:index' %}">НА ГЛАВНУЮ</a>
+</div>
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends "angry_app/base.html" %}
+
+{% block content %}
+<div>
+    <h6>ГЛАВНАЯ СТРАНИЦА</h6>
+    <br/><br/><br/><br/>
+    {% if request.user.is_authenticated %}
+    <h5>НАЖМИТЕ, ЧТОБЫ ПЕРЕЙТИ НА "МОЯ СТРАНИЦА"</h5>
+    <br/>
+    <a class="btn btn-dark btn-lg" href="{% url 'angry_app:my_page' %}">МОЯ СТРАНИЦА</a>
+    {% else %}
+    <h5>ВЫПОЛНИТЕ ВХОД, ЧТОБЫ ПОЛУЧИТЬ ДОСТУП К "МОЯ СТРАНИЦА"</h5>
+    <br/>
+    <a class="btn btn-dark btn-lg" href="{% url 'angry_app:my_page' %}">МОЯ СТРАНИЦА</a>
+    {% endif %}
+</div>
+{% endblock content %}
